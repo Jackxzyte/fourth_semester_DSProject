@@ -205,7 +205,7 @@ namespace firstProject
         public bool sendEmail(String email)
         {
             string senderEmail = "jackzyte@gmail.com";
-            string senderPassword = " <app password> "; //change this;
+            string senderPassword = " <app password> "; //change this
 
             Random random = new Random();
             this.otp = random.Next(100000, 999999).ToString();
