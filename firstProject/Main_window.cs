@@ -17,19 +17,21 @@ namespace firstProject
 {
     public partial class Main_window : Form
     {
+        private string otpass;
         private String email;
         private String password;
         public String name;
         private int credits;
         private String connString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\ASUS\\Documents\\LoginDB.mdf;Integrated Security=True;Connect Timeout=30";
         private SqlConnection conn = null;
-        public Main_window(String email, string password)
+        public Main_window(String email, string password, string otp)
         {
             this.email = email;
             this.name = email.Replace("@gmail.com", "");
             this.password = password;
             conn = new SqlConnection(connString);
             InitializeComponent();
+            this.otpass = otp;
         }
 
         ~Main_window()
@@ -38,9 +40,14 @@ namespace firstProject
         }
         private void Main_window_Load(object sender, EventArgs e)
         {
-            otp.Visible = false;
-            otpButton.Visible = false;
-            status.Visible = false;
+            //initial elements
+            deposit.Visible = false;
+            depositInput.Visible = false;
+            withdraw.Visible = false;
+            withdrawInput.Visible = false;
+            status.ForeColor = Color.Red;
+            status.Text = "Not Verified";
+
             depositInput.ForeColor = Color.Gray;
             depositInput.Text = "0";
             withdrawInput.ForeColor = Color.Gray;
@@ -75,14 +82,30 @@ namespace firstProject
             status.Text = "Deposited";
             depositInput.Text = "0";
             depositInput.ForeColor = Color.Gray;
-            otp.Visible = true;
-            otpButton.Visible = true;
-            status.Visible = true;
         }
 
         private void otpButton_Click(object sender, EventArgs e)
         {
+            //verify otp
+            String userotp = otp.Text;
+            if (otpass.Equals(userotp))
+            {
+                status.ForeColor = Color.Green;
+                status.Text = "Verified";
+                //hide otp stuffs
+                otp.Visible = false;
+                otpButton.Visible= false;
 
+                deposit.Visible = true;
+                depositInput.Visible = true;
+                withdraw.Visible = true;
+                withdrawInput.Visible = true;
+            }
+            else
+            {
+                status.ForeColor = Color.Red;
+                status.Text = "Invalid OTP";
+            }
         }
 
         private void close_Button_Click(object sender, EventArgs e)

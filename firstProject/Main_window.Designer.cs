@@ -60,7 +60,7 @@
             this.greet.AutoSize = true;
             this.greet.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.greet.ForeColor = System.Drawing.Color.White;
-            this.greet.Location = new System.Drawing.Point(17, 96);
+            this.greet.Location = new System.Drawing.Point(19, 99);
             this.greet.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.greet.Name = "greet";
             this.greet.Size = new System.Drawing.Size(104, 24);
@@ -102,7 +102,7 @@
             this.credit.AutoSize = true;
             this.credit.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.credit.ForeColor = System.Drawing.Color.White;
-            this.credit.Location = new System.Drawing.Point(21, 158);
+            this.credit.Location = new System.Drawing.Point(21, 155);
             this.credit.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.credit.Name = "credit";
             this.credit.Size = new System.Drawing.Size(101, 24);

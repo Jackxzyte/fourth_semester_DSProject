@@ -16,6 +16,7 @@ namespace firstProject
 {
     public partial class ds_lab_project : Form
     {
+        private String otp = "123456";
         private String connString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\ASUS\\Documents\\LoginDB.mdf;Integrated Security=True;Connect Timeout=30";
         private SqlConnection conn = null;
         public ds_lab_project()
@@ -140,9 +141,15 @@ namespace firstProject
                     this.Hide();
                     label4.Text = "Logged-in";
                     //send email? yes
-                    //sendEmail(email);
-                    Main_window main = new Main_window(email, password);
-                    main.Show();
+                    if (sendEmail(email))
+                    {
+                        Main_window main = new Main_window(email, password, otp);
+                        main.Show();
+                    }
+                    else
+                    {
+                        label4.Text = "Email service is down";
+                    }
                 }
                 else
                 {
@@ -201,7 +208,7 @@ namespace firstProject
             string senderPassword = "jniqekhafpggikfx";
 
             Random random = new Random();
-            string otp = random.Next(100000, 999999).ToString();
+            this.otp = random.Next(100000, 999999).ToString();
             try
             {
                 MailMessage mail = new MailMessage();
