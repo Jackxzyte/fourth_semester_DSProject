@@ -1,4 +1,4 @@
-# fourth_semester_dsProject
+# DBMS project (semester four 5-2023)
 ### windows form application made on dotNET v6.0.3.11
 4th semester database systems project
 
