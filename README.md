@@ -10,6 +10,6 @@
     PRIMARY KEY CLUSTERED ([email] ASC)
 );`
 
-[reference] (https://www.youtube.com/watch?v=tcmmCcMs8yU)
+[reference] https://www.youtube.com/watch?v=tcmmCcMs8yU
 
-[reference] (https://www.youtube.com/watch?v=K9Ps66GoD-k)
+[reference] https://www.youtube.com/watch?v=K9Ps66GoD-k
