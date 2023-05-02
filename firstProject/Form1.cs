@@ -205,7 +205,7 @@ namespace firstProject
         public bool sendEmail(String email)
         {
             string senderEmail = "jackzyte@gmail.com";
-            string senderPassword = "jniqekhafpggikfx";
+            string senderPassword = " <app password> ";
 
             Random random = new Random();
             this.otp = random.Next(100000, 999999).ToString();
@@ -219,7 +219,7 @@ namespace firstProject
 
                 mail.From = new MailAddress(senderEmail);
                 mail.To.Add(email);
-                mail.Subject = "OTP for authentication";
+                mail.Subject = "OTP for verification";
                 mail.Body = "Your OTP is " + otp;
                 Console.WriteLine(otp);
                 client.Send(mail);
